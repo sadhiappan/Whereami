@@ -82,18 +82,17 @@
     
     cell.textLabel.text = [[filteredAtlasData objectAtIndex:indexPath.row] title];
     
-    cell.textLabel.userInteractionEnabled = YES;
-    
-//    UITapGestureRecognizer *gestureRec = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(openUrl:coordinate:)];
-//    gestureRec.numberOfTouchesRequired = 1;
-//    gestureRec.numberOfTapsRequired = 1;
-//    [cell.textLabel addGestureRecognizer:gestureRec];
-//    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:
-//                                                [NSString stringWithFormat:@"comgooglemaps://?center=%f,%f&zoom=14&views=traffic", [[filteredAtlasData objectAtIndex:indexPath.row] coordinate.], location.coordinate.longitude]]];
-    
     return cell;
     
 }
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    CLLocationCoordinate2D coordinate = [[filteredAtlasData objectAtIndex:indexPath.row] coordinate];
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:
+                                                [NSString stringWithFormat:@"comgooglemaps://?center=%f,%f&zoom=14&views=traffic", coordinate.latitude, coordinate.longitude]]];
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -145,19 +144,5 @@
     [searchBar setShowsCancelButton:NO animated:NO];
     [searchBar resignFirstResponder];
 }
-
-
-- (void)openUrl:(id)sender coordinate:(Location *) location
-{
-    UIGestureRecognizer *rec = (UIGestureRecognizer *)sender;
-    
-    id hitLabel = [self.view hitTest:[rec locationInView:self.view] withEvent:nil];
-    
-    if ([hitLabel isKindOfClass:[UILabel class]]) {
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:
-                                                    [NSString stringWithFormat:@"comgooglemaps://?center=%f,%f&zoom=14&views=traffic", location.coordinate.latitude, location.coordinate.longitude]]];
-    }
-}
-
 
 @end

@@ -7,25 +7,28 @@
 //
 
 #import "WhereamiAppDelegate.h"
-
 #import "WhereamiViewController.h"
+#import "LocationsViewController.h"
 
 @implementation WhereamiAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
-    self.viewController = [[WhereamiViewController alloc] initWithNibName:@"WhereamiViewController" bundle:nil];
-    self.window.rootViewController = self.viewController;
+
+    UITabBarController *tabBar = [[UITabBarController alloc] init];
+    WhereamiViewController *whereamiController = [[WhereamiViewController alloc] init];
+    LocationsViewController *locationsViewController = [[LocationsViewController alloc] init];
+    tabBar.viewControllers = [NSArray arrayWithObjects:whereamiController, locationsViewController, nil];
+    
+    self.window.rootViewController = tabBar;
     [self.window makeKeyAndVisible];
     return YES;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application
 {
-    // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-    // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
+    [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 - (void)applicationDidEnterBackground:(UIApplication *)application

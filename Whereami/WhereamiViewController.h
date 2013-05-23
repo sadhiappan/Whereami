@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MapKit/MapKit.h>
 
-@interface WhereamiViewController : UIViewController
+
+@interface WhereamiViewController : UIViewController <MKMapViewDelegate, UIAlertViewDelegate>
 
 @end

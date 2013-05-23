@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		511BE71A1746D718003A9BD3 /* image.png in Resources */ = {isa = PBXBuildFile; fileRef = 511BE7191746D718003A9BD3 /* image.png */; };
 		5132D8311740366000A150BC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5132D8301740366000A150BC /* UIKit.framework */; };
 		5132D8331740366000A150BC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5132D8321740366000A150BC /* Foundation.framework */; };
 		5132D8351740366000A150BC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5132D8341740366000A150BC /* CoreGraphics.framework */; };
@@ -18,9 +19,16 @@
 		5132D8471740366000A150BC /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5132D8461740366000A150BC /* Default-568h@2x.png */; };
 		5132D84A1740366000A150BC /* WhereamiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5132D8491740366000A150BC /* WhereamiViewController.m */; };
 		5132D84D1740366000A150BC /* WhereamiViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5132D84B1740366000A150BC /* WhereamiViewController.xib */; };
+		5132D8541740369200A150BC /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5132D8531740369200A150BC /* CoreLocation.framework */; };
+		5132D8561740369B00A150BC /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5132D8551740369B00A150BC /* MapKit.framework */; };
+		5132D85D17403D7500A150BC /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = 5132D85C17403D7500A150BC /* Location.m */; };
+		5199CF1B1741D88D000CBA04 /* LocationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5199CF191741D88D000CBA04 /* LocationsViewController.m */; };
+		5199CF1C1741D88D000CBA04 /* LocationsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5199CF1A1741D88D000CBA04 /* LocationsViewController.xib */; };
+		5199CF1F1741DAFE000CBA04 /* Atlas.m in Sources */ = {isa = PBXBuildFile; fileRef = 5199CF1E1741DAFE000CBA04 /* Atlas.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		511BE7191746D718003A9BD3 /* image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image.png; sourceTree = "<group>"; };
 		5132D82D1740366000A150BC /* Whereami.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Whereami.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5132D8301740366000A150BC /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		5132D8321740366000A150BC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -37,6 +45,15 @@
 		5132D8481740366000A150BC /* WhereamiViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WhereamiViewController.h; sourceTree = "<group>"; };
 		5132D8491740366000A150BC /* WhereamiViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WhereamiViewController.m; sourceTree = "<group>"; };
 		5132D84C1740366000A150BC /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/WhereamiViewController.xib; sourceTree = "<group>"; };
+		5132D8531740369200A150BC /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		5132D8551740369B00A150BC /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		5132D85B17403D7500A150BC /* Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Location.h; sourceTree = "<group>"; };
+		5132D85C17403D7500A150BC /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Location.m; sourceTree = "<group>"; };
+		5199CF181741D88D000CBA04 /* LocationsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationsViewController.h; sourceTree = "<group>"; };
+		5199CF191741D88D000CBA04 /* LocationsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationsViewController.m; sourceTree = "<group>"; };
+		5199CF1A1741D88D000CBA04 /* LocationsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LocationsViewController.xib; sourceTree = "<group>"; };
+		5199CF1D1741DAFE000CBA04 /* Atlas.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Atlas.h; sourceTree = "<group>"; };
+		5199CF1E1741DAFE000CBA04 /* Atlas.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Atlas.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +61,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5132D8561740369B00A150BC /* MapKit.framework in Frameworks */,
+				5132D8541740369200A150BC /* CoreLocation.framework in Frameworks */,
 				5132D8311740366000A150BC /* UIKit.framework in Frameworks */,
 				5132D8331740366000A150BC /* Foundation.framework in Frameworks */,
 				5132D8351740366000A150BC /* CoreGraphics.framework in Frameworks */,
@@ -56,6 +75,7 @@
 		5132D8241740366000A150BC = {
 			isa = PBXGroup;
 			children = (
+				511BE7191746D718003A9BD3 /* image.png */,
 				5132D8361740366000A150BC /* Whereami */,
 				5132D82F1740366000A150BC /* Frameworks */,
 				5132D82E1740366000A150BC /* Products */,
@@ -73,6 +93,8 @@
 		5132D82F1740366000A150BC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5132D8551740369B00A150BC /* MapKit.framework */,
+				5132D8531740369200A150BC /* CoreLocation.framework */,
 				5132D8301740366000A150BC /* UIKit.framework */,
 				5132D8321740366000A150BC /* Foundation.framework */,
 				5132D8341740366000A150BC /* CoreGraphics.framework */,
@@ -83,11 +105,15 @@
 		5132D8361740366000A150BC /* Whereami */ = {
 			isa = PBXGroup;
 			children = (
+				5132D85717403D1600A150BC /* Model */,
 				5132D83F1740366000A150BC /* WhereamiAppDelegate.h */,
 				5132D8401740366000A150BC /* WhereamiAppDelegate.m */,
 				5132D8481740366000A150BC /* WhereamiViewController.h */,
 				5132D8491740366000A150BC /* WhereamiViewController.m */,
 				5132D84B1740366000A150BC /* WhereamiViewController.xib */,
+				5199CF181741D88D000CBA04 /* LocationsViewController.h */,
+				5199CF191741D88D000CBA04 /* LocationsViewController.m */,
+				5199CF1A1741D88D000CBA04 /* LocationsViewController.xib */,
 				5132D8371740366000A150BC /* Supporting Files */,
 			);
 			path = Whereami;
@@ -105,6 +131,17 @@
 				5132D8461740366000A150BC /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5132D85717403D1600A150BC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5132D85B17403D7500A150BC /* Location.h */,
+				5132D85C17403D7500A150BC /* Location.m */,
+				5199CF1D1741DAFE000CBA04 /* Atlas.h */,
+				5199CF1E1741DAFE000CBA04 /* Atlas.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -164,6 +201,8 @@
 				5132D8451740366000A150BC /* Default@2x.png in Resources */,
 				5132D8471740366000A150BC /* Default-568h@2x.png in Resources */,
 				5132D84D1740366000A150BC /* WhereamiViewController.xib in Resources */,
+				5199CF1C1741D88D000CBA04 /* LocationsViewController.xib in Resources */,
+				511BE71A1746D718003A9BD3 /* image.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -177,6 +216,9 @@
 				5132D83D1740366000A150BC /* main.m in Sources */,
 				5132D8411740366000A150BC /* WhereamiAppDelegate.m in Sources */,
 				5132D84A1740366000A150BC /* WhereamiViewController.m in Sources */,
+				5132D85D17403D7500A150BC /* Location.m in Sources */,
+				5199CF1B1741D88D000CBA04 /* LocationsViewController.m in Sources */,
+				5199CF1F1741DAFE000CBA04 /* Atlas.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -299,6 +341,7 @@
 				5132D8521740366000A150BC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

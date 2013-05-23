@@ -32,7 +32,7 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        
+        self.title = @"Locations";
     }
     return self;
 }
@@ -40,7 +40,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.title = @"Locations";
+
     
     // Link the delegates to IBOutlets
     self.searchBar.delegate = self;
@@ -93,11 +93,6 @@
                                                 [NSString stringWithFormat:@"comgooglemaps://?center=%f,%f&zoom=14&views=traffic", coordinate.latitude, coordinate.longitude]]];
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
 - (NSArray *)filterSearchResults:(NSString *)searchText
 {

@@ -18,17 +18,23 @@
 
 @implementation WhereamiViewController
 
-- (Atlas *)atlas
+
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
-    if (!_atlas) _atlas = [[Atlas alloc] init];
-    return _atlas;
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    
+    if (self) {
+        self.title = @"Where Am I";
+    }
+    return self;
 }
+
+
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    self.title = @"Where Am I";
     
     // Setup Map
     [self.mapView setUserTrackingMode:MKUserTrackingModeFollow animated:YES];
@@ -48,6 +54,12 @@
     for (id loc in locations) {
         [self.mapView addAnnotation:loc];
     }
+}
+
+- (Atlas *)atlas
+{
+    if (!_atlas) _atlas = [[Atlas alloc] init];
+    return _atlas;
 }
 
 - (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation

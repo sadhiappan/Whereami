@@ -55,7 +55,25 @@
     NSLog(@"(%f, %f)", userLocation.location.coordinate.latitude, userLocation.location.coordinate.longitude);
 }
 
-- (IBAction)saveLocation:(id)sender {
+- (IBAction)switchMapType:(id)sender
+{
+    UISegmentedControl *switchMapType = (UISegmentedControl *) sender;
+    NSInteger selectedSegment = switchMapType.selectedSegmentIndex;
+    
+    // Switch the map types based on the switch control
+    if (selectedSegment == 0) {
+        self.mapView.mapType = MKMapTypeStandard;
+    } else if (selectedSegment == 1) {
+        self.mapView.mapType = MKMapTypeSatellite;
+    } else if (selectedSegment == 2) {
+        self.mapView.mapType = MKMapTypeHybrid;
+    } else {
+        self.mapView.mapType = MKMapTypeStandard;
+    }
+}
+
+- (IBAction)saveLocation:(id)sender
+{
     [self showAlert];
 }
 

@@ -44,7 +44,7 @@
     // Setup drop pin gesture
     UILongPressGestureRecognizer *lpgr = [[UILongPressGestureRecognizer alloc]
                                           initWithTarget:self action:@selector(handleLongPress:)];
-    lpgr.minimumPressDuration = 2.0; //user needs to press for 2 seconds
+    lpgr.minimumPressDuration = 1.0; //user needs to press for 2 seconds
     [self.mapView addGestureRecognizer:lpgr];
     
     // Get location coordinates from USUserDefaults

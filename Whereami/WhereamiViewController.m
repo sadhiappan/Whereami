@@ -33,9 +33,18 @@
     // Setup Map
     [self.mapView setUserTrackingMode:MKUserTrackingModeFollow animated:YES];
     self.mapView.delegate = self;
-    self.mapView.mapType = MKMapTypeSatellite;
+    self.mapView.mapType = MKMapTypeStandard;
     
+    // Setup drop pin gesture
+    UILongPressGestureRecognizer *lpgr = [[UILongPressGestureRecognizer alloc]
+                                          initWithTarget:self action:@selector(handleLongPress:)];
+    lpgr.minimumPressDuration = 2.0; //user needs to press for 2 seconds
+    [self.mapView addGestureRecognizer:lpgr];
+    
+    // Get location coordinates from USUserDefaults
     NSMutableArray *locations = [self.atlas getLocations];
+    
+    // Annotate the saved points on the map
     for (id loc in locations) {
         [self.mapView addAnnotation:loc];
     }
@@ -47,14 +56,7 @@
 }
 
 - (IBAction)saveLocation:(id)sender {
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Save Location"
-                                                    message:@"Enter location name"
-                                                   delegate:self
-                                          cancelButtonTitle:@"Cancel"
-                                          otherButtonTitles:@"Save", nil];
-    
-    alert.alertViewStyle = UIAlertViewStylePlainTextInput;
-    [alert show];
+    [self showAlert];
 }
 
 - (void)performSaveLocation:(CLLocationCoordinate2D)coordinate
@@ -79,6 +81,35 @@
         NSString *locationName = [alertView textFieldAtIndex:0].text;
         [self performSaveLocation:userLocation withName:locationName];
     }
+}
+
+- (void)handleLongPress:(UIGestureRecognizer *)gestureRecognizer
+{
+    // Handle long press to drop a pin in the map
+    if (gestureRecognizer.state != UIGestureRecognizerStateBegan)
+        return;
+    
+    CGPoint touchPoint = [gestureRecognizer locationInView:self.mapView];
+    CLLocationCoordinate2D touchMapCoordinate =
+    [self.mapView convertPoint:touchPoint toCoordinateFromView:self.mapView];
+    
+    Location *annotate = [[Location alloc] init];
+    annotate.coordinate = touchMapCoordinate;
+    [self.mapView addAnnotation:annotate];
+    [self showAlert];
+}
+
+- (void)showAlert
+{
+    // Initial the alert view to capture the location name
+    UIAlertView *alert = [[UIAlertView alloc]    initWithTitle:@"Save Location"
+                                          message:@"Enter location name"
+                                         delegate:self
+                                cancelButtonTitle:@"Cancel"
+                                otherButtonTitles:@"Save", nil];
+    
+    alert.alertViewStyle = UIAlertViewStylePlainTextInput;
+    [alert show];
 }
 
 @end

@@ -1,0 +1,10 @@
+PODS:
+  - PaperFold (1.1)
+
+DEPENDENCIES:
+  - PaperFold (~> 1.1)
+
+SPEC CHECKSUMS:
+  PaperFold: a7b0348ac9a48478dcd0b216f7a05fb5e3345961
+
+COCOAPODS: 0.20.2

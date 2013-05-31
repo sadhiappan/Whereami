@@ -9,6 +9,7 @@
 #import "WhereamiAppDelegate.h"
 #import "WhereamiViewController.h"
 #import "LocationsViewController.h"
+#import "PaperFoldNavigationController.h"
 
 @implementation WhereamiAppDelegate
 
@@ -16,13 +17,30 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 
-    UITabBarController *tabBar = [[UITabBarController alloc] init];
-    WhereamiViewController *whereamiController = [[WhereamiViewController alloc] init];
-    LocationsViewController *locationsViewController = [[LocationsViewController alloc] init];
-    tabBar.viewControllers = [NSArray arrayWithObjects:whereamiController, locationsViewController, nil];
-    
-    self.window.rootViewController = tabBar;
+//    UITabBarController *tabBar = [[UITabBarController alloc] init];
+//    WhereamiViewController *whereamiController = [[WhereamiViewController alloc] init];
+//    LocationsViewController *locationsViewController = [[LocationsViewController alloc] init];
+//    tabBar.viewControllers = [NSArray arrayWithObjects:whereamiController, locationsViewController, nil];
+//    
+//    self.window.rootViewController = tabBar;
     [self.window makeKeyAndVisible];
+    
+    LocationsViewController *locationsViewController = [[LocationsViewController alloc] init];
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:locationsViewController];
+    PaperFoldNavigationController *paperFoldNavController = [[PaperFoldNavigationController alloc] initWithRootViewController:navController];
+    [self.window setRootViewController:paperFoldNavController];
+    
+//    Left View to be implmented later
+//    LeftViewController *leftViewController = [[LeftViewController alloc] init];
+//    UINavigationController *leftNavController = [[UINavigationController alloc] initWithRootViewController:leftViewController];
+//    [leftNavController setNavigationBarHidden:YES];
+//    [paperFoldNavController setLeftViewController:leftNavController width:150];
+    
+    WhereamiViewController *whereamiController = [[WhereamiViewController alloc] init];
+    UINavigationController *rightNavController = [[UINavigationController alloc] initWithRootViewController:whereamiController];
+    [rightNavController setNavigationBarHidden:YES];
+    [paperFoldNavController setRightViewController:rightNavController width:250.0 rightViewFoldCount:3 rightViewPullFactor:0.9];
+    
     return YES;
 }
 

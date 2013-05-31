@@ -67,6 +67,23 @@
     NSLog(@"(%f, %f)", userLocation.location.coordinate.latitude, userLocation.location.coordinate.longitude);
 }
 
+- (MKAnnotationView *)mapView:(MKMapView *)map viewForAnnotation:(id <MKAnnotation>)annotation
+{
+    static NSString *AnnotationViewID = @"annotationViewID";
+    
+    MKAnnotationView *annotationView = (MKAnnotationView *)[_mapView dequeueReusableAnnotationViewWithIdentifier:AnnotationViewID];
+    
+    if (annotationView == nil)
+    {
+        annotationView = [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:AnnotationViewID];
+    }
+    
+    annotationView.image = [UIImage imageNamed:@"pin.png"];
+    annotationView.annotation = annotation;
+    
+    return annotationView;
+}
+
 - (IBAction)switchMapType:(id)sender
 {
     UISegmentedControl *switchMapType = (UISegmentedControl *) sender;

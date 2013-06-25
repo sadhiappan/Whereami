@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>D628AE78-C4A4-480E-87DB-358A5746E92A</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Whereami</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>F25B1A8A-8FFC-41D5-9EB6-D134CE118C38</key>
+		<string>https://github.com/shivaram1190/Whereami.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Whereami.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>F25B1A8A-8FFC-41D5-9EB6-D134CE118C38</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/shivaram1190/Whereami.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>F25B1A8A-8FFC-41D5-9EB6-D134CE118C38</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>F25B1A8A-8FFC-41D5-9EB6-D134CE118C38</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Whereami</string>
+		</dict>
+	</array>
+</dict>
+</plist>

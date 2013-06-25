@@ -24,6 +24,8 @@
 		5132D8541740369200A150BC /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5132D8531740369200A150BC /* CoreLocation.framework */; };
 		5132D8561740369B00A150BC /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5132D8551740369B00A150BC /* MapKit.framework */; };
 		5132D85D17403D7500A150BC /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = 5132D85C17403D7500A150BC /* Location.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		515339361772A80C00432AFF /* Separator.m in Sources */ = {isa = PBXBuildFile; fileRef = 515339351772A37B00432AFF /* Separator.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		5153393917732CA900432AFF /* Settings.m in Sources */ = {isa = PBXBuildFile; fileRef = 5153393817732CA900432AFF /* Settings.m */; };
 		5199CF1B1741D88D000CBA04 /* LocationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5199CF191741D88D000CBA04 /* LocationsViewController.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 		5199CF1C1741D88D000CBA04 /* LocationsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5199CF1A1741D88D000CBA04 /* LocationsViewController.xib */; };
 		5199CF1F1741DAFE000CBA04 /* Atlas.m in Sources */ = {isa = PBXBuildFile; fileRef = 5199CF1E1741DAFE000CBA04 /* Atlas.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
@@ -55,6 +57,10 @@
 		5132D8551740369B00A150BC /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		5132D85B17403D7500A150BC /* Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Location.h; sourceTree = "<group>"; };
 		5132D85C17403D7500A150BC /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Location.m; sourceTree = "<group>"; };
+		515339341772A37B00432AFF /* Separator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Separator.h; sourceTree = "<group>"; };
+		515339351772A37B00432AFF /* Separator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Separator.m; sourceTree = "<group>"; };
+		5153393717732CA900432AFF /* Settings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Settings.h; sourceTree = "<group>"; };
+		5153393817732CA900432AFF /* Settings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Settings.m; sourceTree = "<group>"; };
 		5199CF181741D88D000CBA04 /* LocationsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationsViewController.h; sourceTree = "<group>"; };
 		5199CF191741D88D000CBA04 /* LocationsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationsViewController.m; sourceTree = "<group>"; };
 		5199CF1A1741D88D000CBA04 /* LocationsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LocationsViewController.xib; sourceTree = "<group>"; };
@@ -95,6 +101,7 @@
 				88390BB302C14641B70B4DBF /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
+			usesTabs = 0;
 		};
 		5132D82E1740366000A150BC /* Products */ = {
 			isa = PBXGroup;
@@ -130,6 +137,8 @@
 				5199CF191741D88D000CBA04 /* LocationsViewController.m */,
 				5199CF1A1741D88D000CBA04 /* LocationsViewController.xib */,
 				5132D8371740366000A150BC /* Supporting Files */,
+				515339341772A37B00432AFF /* Separator.h */,
+				515339351772A37B00432AFF /* Separator.m */,
 			);
 			path = Whereami;
 			sourceTree = "<group>";
@@ -155,6 +164,8 @@
 				5132D85C17403D7500A150BC /* Location.m */,
 				5199CF1D1741DAFE000CBA04 /* Atlas.h */,
 				5199CF1E1741DAFE000CBA04 /* Atlas.m */,
+				5153393717732CA900432AFF /* Settings.h */,
+				5153393817732CA900432AFF /* Settings.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -264,11 +275,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				515339361772A80C00432AFF /* Separator.m in Sources */,
 				5132D83D1740366000A150BC /* main.m in Sources */,
 				5132D8411740366000A150BC /* WhereamiAppDelegate.m in Sources */,
 				5132D84A1740366000A150BC /* WhereamiViewController.m in Sources */,
 				5132D85D17403D7500A150BC /* Location.m in Sources */,
 				5199CF1B1741D88D000CBA04 /* LocationsViewController.m in Sources */,
+				5153393917732CA900432AFF /* Settings.m in Sources */,
 				5199CF1F1741DAFE000CBA04 /* Atlas.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -358,7 +371,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Whereami/Whereami-Prefix.pch";
 				INFOPLIST_FILE = "Whereami/Whereami-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -371,7 +384,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Whereami/Whereami-Prefix.pch";
 				INFOPLIST_FILE = "Whereami/Whereami-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

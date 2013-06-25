@@ -10,10 +10,12 @@
 #import <MapKit/MapKit.h>
 #import "Location.h"
 #import "Atlas.h"
+#import "Settings.h"
 
 @interface WhereamiViewController ()
 @property (nonatomic, weak) IBOutlet MKMapView *mapView;
 @property (nonatomic, strong) Atlas *atlas;
+@property (nonatomic, strong) Settings *settings;
 @end
 
 @implementation WhereamiViewController
@@ -37,9 +39,10 @@
     [super viewDidLoad];
     
     // Setup Map
-    [self.mapView setUserTrackingMode:MKUserTrackingModeFollow animated:YES];
+    //[self.mapView setUserTrackingMode:MKUserTrackingModeFollow animated:YES];
+    [self.mapView setShowsUserLocation:YES];
     self.mapView.delegate = self;
-    self.mapView.mapType = MKMapTypeStandard;
+    self.mapView.mapType = [self.settings mapType];
     
     // Setup drop pin gesture
     UILongPressGestureRecognizer *lpgr = [[UILongPressGestureRecognizer alloc]
@@ -56,15 +59,28 @@
     }
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    self.mapView.mapType = [self.settings mapType];
+    animated = YES;
+}
+
 - (Atlas *)atlas
 {
     if (!_atlas) _atlas = [[Atlas alloc] init];
     return _atlas;
 }
 
+- (Settings *)settings
+{
+    if (!_settings) _settings = [[Settings alloc] init];
+    return _settings;
+}
+
 - (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation
 {
-    NSLog(@"(%f, %f)", userLocation.location.coordinate.latitude, userLocation.location.coordinate.longitude);
+    CLLocationCoordinate2D loc = [userLocation coordinate];
+    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(loc, 250, 250);
+    [self.mapView setRegion:region animated:YES];
 }
 
 - (MKAnnotationView *)mapView:(MKMapView *)map viewForAnnotation:(id <MKAnnotation>)annotation
